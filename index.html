@@ -13,6 +13,27 @@
             color: #f5f5f7;
             overflow-x: hidden;
         }
+        .navbar {
+            background-color: #2c2c2e;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: #f5f5f7;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #0070c9;
+        }
         .profile-header {
             background-color: #2c2c2e;
             color: #f5f5f7;
@@ -42,6 +63,7 @@
             z-index: 1;
             font-size: 3em;
             animation: fadeInDown 1s ease-in-out;
+            margin-top: 80px;
         }
         .profile-picture {
             width: 150px;
@@ -153,10 +175,104 @@
                 transform: translateY(0);
             }
         }
+        .contact-form {
+            background-color: #2c2c2e;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .contact-form h2 {
+            margin-bottom: 10px;
+            color: #f5f5f7;
+            font-size: 1.5em;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #3a3a3c;
+            color: #f5f5f7;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #0070c9;
+            color: #f5f5f7;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #005bb5;
+            transform: scale(1.1);
+        }
+        .testimonials {
+            background-color: #2c2c2e;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .testimonials h2 {
+            margin-bottom: 10px;
+            color: #f5f5f7;
+            font-size: 1.5em;
+        }
+        .testimonial-item {
+            margin-bottom: 15px;
+        }
+        .testimonial-item p {
+            margin: 5px 0;
+            color: #a8a8a8;
+            font-style: italic;
+        }
+        .testimonial-item span {
+            display: block;
+            color: #f5f5f7;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #2c2c2e;
+            padding: 20px;
+            text-align: center;
+            color: #a8a8a8;
+        }
+        footer a {
+            color: #0070c9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #005bb5;
+        }
+        @media (max-width: 768px) {
+            .navbar a {
+                display: block;
+                margin: 10px 0;
+            }
+            .profile-info, .section, .contact-form, .testimonials {
+                margin: 20px 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="profile-header">
+    <div class="navbar">
+        <a href="#profile">Profile</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="#testimonials">Testimonials</a>
+    </div>
+    <div class="profile-header" id="profile">
         <h1>My Profile</h1>
     </div>
     <div class="profile-info">
@@ -169,13 +285,13 @@
             <a href="https://discordapp.com/users/1033113265892511744" target="_blank">Discord</a>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="about">
         <h2 class="section-title">About Me</h2>
         <div class="item">
             <p>Hey I'm Jazz, a developer who loves to explore new technologies and build innovative projects. I enjoy collaborating with others and sharing knowledge within the tech community.</p>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="item">
             <h3>Project Name</h3>
@@ -186,7 +302,7 @@
             <p>Description of another project and your role in it.</p>
         </div>
     </div>
-    <div class="section">
+    <div class="section" id="skills">
         <h2 class="section-title">Skills</h2>
         <div class="item">
             <p>Python, Java, C++</p>
@@ -195,5 +311,29 @@
             <p>React, Node.js, Django, Spring</p>
         </div>
     </div>
+    <div class="contact-form" id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="testimonials" id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-item">
+            <p>"Jazz is a fantastic developer with a keen eye for detail. Highly recommend working with them!"</p>
+            <span>- Jane Doe</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"An innovative thinker and a great team player. Jazz always brings fresh ideas to the table."</p>
+            <span>- John Smith</span>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Jazz. All rights reserved.</p>
+        <p><a href="#profile">Back to top</a></p>
+    </footer>
 </body>
 </html>
