@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #1c1c1e;
             color: #f5f5f7;
+            overflow-x: hidden;
         }
         .profile-header {
             background-color: #2c2c2e;
@@ -39,6 +40,8 @@
         .profile-header h1 {
             position: relative;
             z-index: 1;
+            font-size: 3em;
+            animation: fadeInDown 1s ease-in-out;
         }
         .profile-picture {
             width: 150px;
@@ -50,6 +53,7 @@
             margin-left: auto;
             margin-right: auto;
             transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
         }
         .profile-picture:hover {
             transform: scale(1.1);
@@ -58,17 +62,21 @@
             text-align: center;
             padding: 20px;
             background-color: #2c2c2e;
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            animation: fadeInUp 1s ease-in-out;
         }
         .profile-info h1 {
             margin: 10px 0;
             color: #f5f5f7;
+            font-size: 2em;
         }
         .profile-info p {
             margin: 5px 0;
             color: #a8a8a8;
+            font-size: 1.1em;
         }
         .social-links {
             margin: 20px 0;
@@ -89,11 +97,13 @@
             transform: scale(1.1);
         }
         .section {
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
             background-color: #2c2c2e;
             border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            animation: fadeInUp 1s ease-in-out;
         }
         .section-title {
             margin-bottom: 10px;
@@ -113,15 +123,43 @@
             margin: 2px 0;
             color: #a8a8a8;
         }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="profile-header">
-        <h1>Jazz</h1>
+        <h1>My Profile</h1>
     </div>
     <div class="profile-info">
         <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
-        <h1>John Doe</h1>
+        <h1>Jazz</h1>
         <p>Enthusiastic Developer and Tech Enthusiast</p>
         <p>San Francisco Bay Area</p>
         <div class="social-links">
