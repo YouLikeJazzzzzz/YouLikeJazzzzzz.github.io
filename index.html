@@ -3,48 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>LinkedIn Profile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #f3f2ef;
         }
-        header {
+        .profile-header {
+            background-color: #004182;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        h1 {
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: -75px;
+        }
+        .profile-info {
+            text-align: center;
+            padding: 20px;
+        }
+        .profile-info h1 {
+            margin: 10px 0;
             color: #333;
         }
-        p {
+        .profile-info p {
+            margin: 5px 0;
             color: #666;
         }
-        .cta-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            text-decoration: none;
-            border-radius: 5px;
+        .experience, .education, .skills {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .cta-button:hover {
-            background-color: #0056b3;
+        .section-title {
+            margin-bottom: 10px;
+            color: #004182;
+        }
+        .item {
+            margin-bottom: 15px;
+        }
+        .item h3 {
+            margin: 5px 0;
+            color: #333;
+        }
+        .item p {
+            margin: 2px 0;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Website</h1>
-        <p>Your journey to awesomeness starts here.</p>
-        <a href="#" class="cta-button">Get Started</a>
-    </header>
+    <div class="profile-header">
+        <h1>My LinkedIn Profile</h1>
+    </div>
+    <div class="profile-info">
+        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+        <h1>John Doe</h1>
+        <p>Software Engineer at Tech Company</p>
+        <p>San Francisco Bay Area | 500+ connections</p>
+    </div>
+    <div class="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="item">
+            <h3>Senior Software Engineer</h3>
+            <p>Tech Company</p>
+            <p>Jan 2020 - Present</p>
+            <p>San Francisco, CA</p>
+        </div>
+        <div class="item">
+            <h3>Software Engineer</h3>
+            <p>Another Tech Company</p>
+            <p>Jun 2016 - Dec 2019</p>
+            <p>New York, NY</p>
+        </div>
+    </div>
+    <div class="education">
+        <h2 class="section-title">Education</h2>
+        <div class="item">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>University of Technology</p>
+            <p>2012 - 2016</p>
+        </div>
+    </div>
+    <div class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="item">
+            <p>JavaScript, Python, Java, C++</p>
+        </div>
+        <div class="item">
+            <p>React, Node.js, Django, Spring</p>
+        </div>
+    </div>
 </body>
 </html>
