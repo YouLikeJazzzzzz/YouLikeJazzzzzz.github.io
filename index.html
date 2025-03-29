@@ -24,8 +24,6 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            overflow-x: auto;
-            white-space: nowrap;
         }
         .navbar a {
             color: #f5f5f7;
@@ -35,13 +33,6 @@
         }
         .navbar a:hover {
             color: #0070c9;
-        }
-        .dark-mode-toggle {
-            background: none;
-            border: none;
-            color: #f5f5f7;
-            cursor: pointer;
-            font-size: 1.2em;
         }
         .profile-header {
             background-color: #2c2c2e;
@@ -198,10 +189,6 @@
             color: #f5f5f7;
             font-size: 1.5em;
         }
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
         .contact-form input, .contact-form textarea {
             width: calc(100% - 20px);
             padding: 10px;
@@ -251,150 +238,6 @@
             color: #f5f5f7;
             font-weight: bold;
         }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-        }
-        .carousel-item {
-            min-width: 300px;
-            margin: 10px;
-            background-color: #3a3a3c;
-            border-radius: 12px;
-            padding: 20px;
-            scroll-snap-align: start;
-            flex: 0 0 auto;
-        }
-        .portfolio-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .portfolio-item {
-            background-color: #3a3a3c;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .portfolio-item .description {
-            padding: 10px;
-            color: #f5f5f7;
-        }
-        .newsletter-signup {
-            background-color: #2c2c2e;
-            border-radius: 12px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-in-out;
-        }
-        .newsletter-signup h2 {
-            margin-bottom: 10px;
-            color: #f5f5f7;
-            font-size: 1.5em;
-        }
-        .newsletter-signup input[type="email"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background-color: #3a3a3c;
-            color: #f5f5f7;
-        }
-        .newsletter-signup button {
-            padding: 10px 20px;
-            background-color: #0070c9;
-            color: #f5f5f7;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .newsletter-signup button:hover {
-            background-color: #005bb5;
-            transform: scale(1.1);
-        }
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 20px auto;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: #0070c9;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        .timeline-item {
-            padding: 10px 20px;
-            position: relative;
-            background-color: #2c2c2e;
-            border-radius: 6px;
-            width: 50%;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1s ease-in-out;
-        }
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -13px;
-            background-color: white;
-            border: 4px solid #0070c9;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .timeline-item.left {
-            left: 0;
-        }
-        .timeline-item.right {
-            left: 50%;
-        }
-        .skills-progress {
-            max-width: 800px;
-            margin: 20px auto;
-            animation: fadeInUp 1s ease-in-out;
-        }
-        .skills-progress .skill {
-            margin-bottom: 20px;
-        }
-        .skills-progress .skill .progress-bar-container {
-            background-color: #3a3a3c;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .skills-progress .skill .progress-bar {
-            height: 20px;
-            background-color: #0070c9;
-            text-align: right;
-            padding-right: 10px;
-            line-height: 20px;
-            color: white;
-        }
-        .skills-progress .skill .progress-bar[data-width="90%"] {
-            width: 90%;
-        }
-        .skills-progress .skill .progress-bar[data-width="75%"] {
-            width: 75%;
-        }
-        .skills-progress .skill .progress-bar[data-width="60%"] {
-            width: 60%;
-        }
-        .skills-progress .skill .progress-bar[data-width="10%"] {
-            width: 10%;
-        }
         footer {
             background-color: #2c2c2e;
             padding: 20px;
@@ -414,18 +257,8 @@
                 display: block;
                 margin: 10px 0;
             }
-            .profile-info, .section, .contact-form, .testimonials, .newsletter-signup, .timeline, .skills-progress {
+            .profile-info, .section, .contact-form, .testimonials {
                 margin: 20px 10px;
-            }
-            .timeline::after {
-                left: 20px;
-            }
-            .timeline-item {
-                width: calc(100% - 40px);
-                left: 20px;
-            }
-            .timeline-item.right {
-                left: 20px;
             }
         }
     </style>
@@ -436,14 +269,8 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#blog">Blog</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#resume">Resume</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="#timeline">Timeline</a>
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
     </div>
     <div class="profile-header" id="profile">
         <h1>My Profile</h1>
@@ -477,43 +304,36 @@
     </div>
     <div class="section" id="skills">
         <h2 class="section-title">Skills</h2>
-        <div class="skills-progress">
-            <div class="skill">
-                <h3>Python</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" data-width="90%">90%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>Java</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" data-width="10%">10%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>C++</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" data-width="60%">60%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>React</h3>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" data-width="75%">75%</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section" id="blog">
-        <h2 class="section-title">Blog</h2>
         <div class="item">
-            <h3>Latest Post</h3>
-            <p>Read about the latest trends and insights in the tech world.</p>
+            <p>Python, Java, C++</p>
+        </div>
+        <div class="item">
+            <p>React, Node.js, Django, Spring</p>
         </div>
     </div>
-    <div class="section" id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <div class="portfolio-gallery">
-            <div class="portfolio-item">
-                <img src="project1.jpg" alt="Project 1">
-                <
+    <div class="contact-form" id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xwplnnwp" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <div class="testimonials" id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-item">
+            <p>"Jazz is a fantastic developer with a keen eye for detail. Highly recommend working with them!"</p>
+            <span>- Jane Doe</span>
+        </div>
+        <div class="testimonial-item">
+            <p>"An innovative thinker and a great team player. Jazz always brings fresh ideas to the table."</p>
+            <span>- John Smith</span>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Jazz. All rights reserved.</p>
+        <p><a href="#profile">Back to top</a></p>
+    </footer>
+</body>
+</html>
